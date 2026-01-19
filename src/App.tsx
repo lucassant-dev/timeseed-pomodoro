@@ -1,29 +1,32 @@
-import "@/styles/theme.css";
-import "@/styles/global.css";
+import { ThemeProvider } from "styled-components";
+import { lightTheme } from "@/styles/themes";
+import Container from "@/components/container";
+import Logo from "@/components/logo";
+import Menu from "@/components/menu";
+import Timer from "@/components/timer";
+import Form from "@/components/form";
+import GlobalStyle from "./styles/global";
 
-import Container from "@/components/container/Container";
-import Logo from "@/components/logo/Logo";
-import Menu from "@/components/menu/Menu";
-import Timer from "@/components/timer/Timer";
-import Form from "@/components/form/Form";
-
-function App() {
+export default function App() {
   return (
-    <>
+    <ThemeProvider theme={lightTheme}>
+		<GlobalStyle />
+
 		<Container>
 			<Logo/>
 		</Container>
+
 		<Container>
 			<Menu/>
 		</Container>
+
 		<Container>
 			<Timer />
 		</Container>
+
 		<Container>
 			<Form />
 		</Container>
-    </>
+	</ThemeProvider>
   );
 }
-
-export default App

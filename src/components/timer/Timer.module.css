@@ -1,6 +1,0 @@
-.timer {
-    color: var(--text-default);
-    text-align: center;
-    font-weight: bold;
-    font-size: clamp(8rem, 25vw, 10rem);
-}
