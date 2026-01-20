@@ -1,4 +1,9 @@
 import darkTheme from "./palletes/darkTheme";
 import lightTheme from "./palletes/lightTheme";
 
-export { darkTheme, lightTheme };
+const themes = {
+    dark: darkTheme,
+    light: lightTheme
+} as const;
+
+export default themes;

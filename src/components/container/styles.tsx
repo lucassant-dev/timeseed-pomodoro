@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerDiv = styled.div`
-    max-width: 98rem;
+    max-width: 58rem;
     margin: 0 auto;
 `;
 

@@ -5,9 +5,11 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        outline: none;
     }
-
+    
     html {
+        min-height: 100vh;
         font-size: 62.5%;
     }
 
@@ -25,8 +27,8 @@ const GlobalStyle = createGlobalStyle`
             sans-serif;
 
         font-size: 1.6rem;
-        background: ${({ theme }) => theme.background.page};
-        color: ${({ theme }) => theme.text.primary};
+        background: ${({ theme }) => theme.page };
+        color: ${({ theme }) => theme.text};
     }
 `;
 
