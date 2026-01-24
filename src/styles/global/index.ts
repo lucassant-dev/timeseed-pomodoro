@@ -30,6 +30,11 @@ const GlobalStyle = createGlobalStyle`
         background: ${({ theme }) => theme.page };
         color: ${({ theme }) => theme.text};
     }
+
+    button {
+        border: none;
+        outline: none;
+    }
 `;
 
 export default GlobalStyle;
