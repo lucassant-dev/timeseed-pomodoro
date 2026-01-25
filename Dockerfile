@@ -1,11 +1,11 @@
-FROM node:20
+FROM oven/bun:latest
 
 WORKDIR /app
 
-COPY package*.json .
+COPY package.json bun.lock ./
 
-RUN npm ci
+RUN bun install
 
 EXPOSE 5173
 
-CMD ["npm", "run", "dev"]
+CMD ["bun", "run", "dev"]
