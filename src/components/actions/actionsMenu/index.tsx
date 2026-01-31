@@ -1,9 +1,9 @@
 import type { JSX } from "react";
 import ActionsMenuRow from "@/components/actions/actionsMenu/actionsMenuRow";
-import InputBox from "@/components/actions/actionsMenu/actionsMenuRow/inputBox";
+import InputBox from "@/components/inputBox";
 import Flow from "@/components/actions/actionsMenu/actionsMenuRow/flow";
-import ActionButton from "@/components/actions/actionsMenu/actionsMenuRow/actionButton";
 import { ActionsMenuDiv } from "./styles";
+import ActionButton from "@/components/actions/actionsMenu/actionButton";
 
 export default function ActionsMenu(): JSX.Element {
     return (
@@ -12,6 +12,8 @@ export default function ActionsMenu(): JSX.Element {
                 <InputBox
                     placeholder="Input task"
                     label="Task"
+                    value=""
+                    onChange={() => {}}
                 />
             </ActionsMenuRow>
             <ActionsMenuRow>

@@ -1,5 +1,5 @@
-export default class ContextError extends Error {
-    public constructor(message: string) {
-        super(message);
-    }
+import ApplicationError from "@/errors/ApplicationError";
+
+export default class ContextError extends ApplicationError {
+    public type: string = "context";
 }

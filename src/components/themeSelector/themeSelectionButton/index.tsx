@@ -24,7 +24,7 @@ export default function ThemeSelectionButton({ theme, onSelect, isSelected }: Pr
             aria-pressed={isSelected}
             title={name}
             aria-label={name}
-            $fillColor={colors.page}
+            $fillColor={`linear-gradient(${colors.backgroundBottom} 0%, ${colors.backgroundTop} 100%)`}
         >
             <ThemeNameLabel $textColor={colors.text}>
                 {formattedThemeName}

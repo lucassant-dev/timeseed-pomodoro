@@ -7,7 +7,7 @@ export const LogoDiv = styled.div`
     gap: 2.4rem;
     
     * {
-        color: ${({ theme }) => theme.primary.default};
+        color: ${({ theme }) => theme.primary};
     }
 `;
 
@@ -25,7 +25,7 @@ export const Link = styled.a`
 
     &:hover * {
         scale: 1.02;
-        color: ${({ theme }) => theme.primary.hover};
+        filter: brightness(0.88);
     }
 `;
  

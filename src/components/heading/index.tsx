@@ -1,5 +1,5 @@
 import type { JSX } from "react";
-import { HeadingDiv } from "./style";
+import { HeadingDiv } from "./styles";
 import Logo from "@/components/heading/logo";
 import NavigationMenu from "@/components/heading/navigationMenu";
 

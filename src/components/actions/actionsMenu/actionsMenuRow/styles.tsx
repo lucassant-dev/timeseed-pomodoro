@@ -19,7 +19,7 @@ export const ActionsMenuRowDiv = styled.div`
         content: "";
         inset: 0;
         pointer-events: none;
-        background-color: ${({ theme }) => theme.background.contrast};
+        background-color: ${({ theme }) => theme.contrast};
         opacity: 0;
         transition: opacity 0.6s ease-in;
     }

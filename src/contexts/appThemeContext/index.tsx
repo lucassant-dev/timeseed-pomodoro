@@ -1,15 +1,24 @@
-import { JSX, ReactNode, useState } from "react";
+import { createContext, JSX, ReactNode, useState } from "react";
 import type AppTheme from "@/styles/themes/AppTheme";
 import { ThemeProvider } from "styled-components";
 import systemThemes from "@/styles/themes";
-import AppThemeContext from "@/contexts/appThemeContext/context";
+import SelectedUserThemeStorage from "@/storage/SelectedUserThemeStorage";
+
+export type AppThemeContextType = {
+    currentTheme: AppTheme,
+    changeTheme: (theme: AppTheme) => void
+};
+
+export const AppThemeContext = createContext<AppThemeContextType>({} as AppThemeContextType);
 
 type AppThemeProviderProps = {
     children: ReactNode
 };
 
 export function AppThemeProvider({ children }: AppThemeProviderProps): JSX.Element {
-    const [theme, setTheme] = useState<AppTheme>(systemThemes.dark);
+    const selectedUserTheme: AppTheme = SelectedUserThemeStorage.getTheme() ?? systemThemes.light;
+    
+    const [theme, setTheme] = useState<AppTheme>(selectedUserTheme);
 
     function changeTheme(theme: AppTheme): void {
         setTheme(theme);

@@ -1,25 +1,25 @@
 import globalColors from "@/styles/themes/globalColors";
 import styled from "styled-components";
 
-type ButtonProps = {
-    $isRunning: boolean
+type Props = {
+    $isRunning?: boolean
 };
 
-export const Button = styled.button<ButtonProps>`
+export const Button = styled.button<Props>`
     border-radius: 2.4rem;
     border: none;
     padding: 1.2rem 0;
     transition: all 0.4s ease-in-out;
-    min-width: 30rem;
     border-radius: 4rem;
+    min-width: 30rem;
     background-color: ${({ theme, $isRunning }) => {
-         return $isRunning
-            ? globalColors.status
-            : theme.primary.default
+        return $isRunning
+            ? globalColors.status.danger
+            : theme.primary
     }};
     
     &:hover {
-        background-color: ${({ theme }) => theme.primary.hover};
+        filter: brightness(0.88);
         cursor: pointer;
     }
 

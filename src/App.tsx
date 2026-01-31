@@ -1,12 +1,13 @@
 import GlobalStyle from "./styles/global";
-import { AppThemeProvider } from "@/contexts/appThemeContext/provider";
+import { AppThemeProvider } from "@/contexts/appThemeContext";
 import Actions from "@/components/actions";
 import Heading from "@/components/heading";
 import Container from "@/components/container";
 import ThemeSelector from "@/components/themeSelector";
+import ThemeCreator from "@/components/themeCreator";
 
 export default function App() {
-	return (
+		return (
 		<AppThemeProvider>
 			<GlobalStyle />
 
@@ -15,8 +16,12 @@ export default function App() {
 			</Container>
 
 			<Container>
-				<ThemeSelector />
+				<ThemeCreator />
 			</Container>
+
+			{/* <Container>
+				<ThemeSelector />
+			</Container> */}
 
 			{/* <Container>
 				<Actions />

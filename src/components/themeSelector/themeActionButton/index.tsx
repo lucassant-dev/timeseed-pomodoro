@@ -9,7 +9,6 @@ type Props = {
 
 export default function ThemeActionButton({ label, color, onClick }: Props): JSX.Element {
     const title: string = `${label} theme`;
-    
     return (
         <ActionButton onClick={onClick} title={title} aria-label={title} $color={color}>
             {label}

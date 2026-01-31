@@ -1,4 +1,4 @@
-import AppThemeContext, { type AppThemeContextType } from "@/contexts/appThemeContext/context";
+import {  AppThemeContextType, AppThemeContext } from "@/contexts/appThemeContext";
 import { useContext } from "react";
 
 export default function useAppTheme(): AppThemeContextType {

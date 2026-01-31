@@ -1,21 +1,6 @@
 import "styled-components";
+import { AppThemeColors } from "@/styles/themes/AppTheme";
 
 declare module "styled-components" {
-    export interface DefaultTheme {
-        primary: {
-            default: string,
-            hover: string
-        },
-        
-        background: {
-            default: string,
-            contrast: string,
-            hover: string,
-            disabled: string
-        },
-        
-        page: string,
-        text: string,
-        icon: string
-    }
+    export interface DefaultTheme extends AppThemeColors {}
 }

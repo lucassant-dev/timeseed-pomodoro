@@ -6,10 +6,9 @@ export const FlowDiv = styled.div`
     justify-content: center;
     flex-direction: column;
     border-radius: 10rem;
-    background-color: ${({ theme }) => theme.background.default};
+    background-color: ${({ theme }) => theme.menu};
     padding: 1rem 3rem;
     gap: 1rem;
-
 `;
 
 export const FlowBar = styled.ul`
@@ -35,7 +34,7 @@ export const Icon = styled.li`
         position: absolute;
         content: "";
         inset: 0;
-        background-color: ${({ theme }) => theme.background.contrast};
+        background-color: ${({ theme }) => theme.contrast};
         pointer-events: none;
         opacity: 0;
         transition: opacity 0.2s ease-in;

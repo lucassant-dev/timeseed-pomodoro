@@ -1,3 +1,4 @@
+import globalColors from "@/styles/themes/globalColors";
 import styled from "styled-components";
 
 export const InputDiv = styled.div`
@@ -21,7 +22,7 @@ export const InputWrapper = styled.div`
         transform: translateX(-50%);
         width: 88%;
         height: 0.4rem;
-        background-color: ${({ theme }) => theme.primary.default};
+        background-color: ${({ theme }) => theme.primary};
         border-radius: 0.4rem;
         transition: all 0.2s ease-in-out;
     }
@@ -40,13 +41,13 @@ export const Input = styled.input`
     color: ${({ theme }) => theme.text};
     background-color: transparent;
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: bold;
     border: none;
     transition: all 0.22s ease-in-out;
     
     &::placeholder {
-        color: ${({ theme }) => theme.background};
+        color: ${({ theme }) => theme.text};
         font-size: 1.6rem;
         font-style: italic;
     }
@@ -56,7 +57,7 @@ export const Input = styled.input`
     }
 
     &:disabled {
-        color: ${({ theme }) => theme.background.disabled};
+        color: ${globalColors.status.disabled};
     }
 `;
 

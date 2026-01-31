@@ -21,7 +21,7 @@ export const ThemeSelectorDiv = styled.div`
 export const SelectorTitle = styled.h1`
     text-align: center;
     font-size: 3rem;
-    color: ${({ theme }) => theme.primary.default};
+    color: ${({ theme }) => theme.primary};
     cursor: default;
 `;
 
@@ -38,7 +38,7 @@ export const SelectionList = styled.ul`
     flex-direction: column;
     gap: 1.2rem;
     padding: 0 1.6rem;
-    scrollbar-color: ${({ theme }) => `${theme.primary.default} ${theme.background.default}`};
+    scrollbar-color: ${({ theme }) => `${theme.primary} ${theme.menu}`};
     scrollbar-width: auto;
 `;
 

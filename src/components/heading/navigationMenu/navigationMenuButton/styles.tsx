@@ -6,13 +6,13 @@ export const Button = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: ${({ theme }) => theme.primary.default};
+    background-color: ${({ theme }) => theme.primary};
     border-radius: 1.4rem;
     transition: all 0.2s ease-in-out;
 
     &:hover {
         cursor: pointer;
-        background-color: ${({ theme }) => theme.primary.hover};
+        filter: brightness(0.88);
     }
 `;
 
@@ -25,7 +25,7 @@ export const SvgDiv = styled.div`
 
     svg {
         color: ${({ theme }) => theme.icon};
-        stroke-width: 0.18rem;
+        stroke-width: 0.2rem;
         width: 90%;
         height: 90%;
     }

@@ -1,8 +1,16 @@
-import type { DefaultTheme } from "styled-components/dist/types";
+export type AppThemeColors = {
+    primary: string,
+    text: string,
+    icon: string,
+    menu: string,
+    contrast: string,
+    backgroundTop: string,
+    backgroundBottom: string
+}
 
 type AppTheme = {
     name: string,
-    colors: DefaultTheme
+    colors: AppThemeColors
 };
 
 export default AppTheme;

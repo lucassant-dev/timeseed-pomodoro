@@ -8,19 +8,29 @@ import { PlusIcon } from "lucide-react";
 import ThemeActionButton from "./themeActionButton";
 import globalColors from "@/styles/themes/globalColors";
 import useAppTheme from "@/hooks/useAppTheme";
+import CustomUserThemeStorage from "@/storage/CustomUserThemeStorage";
+import SelectedUserThemeStorage from "@/storage/SelectedUserThemeStorage";
 
 export default function ThemeSelector(): JSX.Element {
     const { currentTheme, changeTheme } = useAppTheme();
     const [selectedTheme, setSelectedTheme] = useState<AppTheme>(currentTheme);
 
     const defaultAppThemes: AppTheme[] = Object.values(systemThemes);
+    const userCustomThemes: AppTheme[] = Object.values(CustomUserThemeStorage.getAllThemes());
+
+    const appThemes: AppTheme[] = defaultAppThemes.concat(userCustomThemes);
+
+    function handleSelectClick(): void {
+        changeTheme(selectedTheme);
+        SelectedUserThemeStorage.setTheme(selectedTheme);
+    }
 
     return (
         <ThemeSelectorDiv>
             <SelectorTitle aria-label="Theme Selection">Theme Selection</SelectorTitle>
             
             <SelectionList>
-                {defaultAppThemes.map((theme) => {
+                {appThemes.map((theme) => {
                     return (
                         <SelectionListItem key={theme.name}>
                             <ThemeSelectionButton
@@ -31,14 +41,16 @@ export default function ThemeSelector(): JSX.Element {
                         </SelectionListItem>
                     );
                 })}
-                <AddThemeButton icon={PlusIcon} actionLabel="Add new theme" />
+                <SelectionListItem>
+                    <AddThemeButton icon={PlusIcon} actionLabel="Add new theme" />
+                </SelectionListItem>
             </SelectionList>
 
             <ActionButtonsDiv>
                 <ThemeActionButton
                     label="Select"
                     color={globalColors.status.success}
-                    onClick={() => changeTheme(selectedTheme)}
+                    onClick={handleSelectClick}
                 />
                 <ThemeActionButton
                     label="Remove"

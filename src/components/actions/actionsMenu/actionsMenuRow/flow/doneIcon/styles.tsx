@@ -24,6 +24,6 @@ export const IconDiv = styled.div<IconProps>`
         stroke-width: 0.22rem;
         width: 100%;
         height: 100%;
-        color: ${({ theme }) => theme.primary.default};
+        color: ${({ theme }) => theme.primary};
     }
 `;

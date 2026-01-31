@@ -25,7 +25,7 @@ export const SelectionButton = styled.button<SelectionButtonProps>`
     }
     
     &[aria-pressed="true"] {
-        border: 0.52rem solid ${({ theme }) => theme.primary.default};
+        border: 0.52rem solid ${({ theme }) => theme.primary};
         box-shadow: none;
     }
 `;

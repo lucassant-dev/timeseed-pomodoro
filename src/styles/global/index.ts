@@ -27,7 +27,12 @@ const GlobalStyle = createGlobalStyle`
             sans-serif;
 
         font-size: 1.6rem;
-        background: ${({ theme }) => theme.page };
+        background: ${({ theme }) => {
+            return `linear-gradient(
+                ${theme.backgroundBottom} 0%,
+                ${theme.backgroundTop} 100%
+            )`
+        }};
         color: ${({ theme }) => theme.text};
     }
 
