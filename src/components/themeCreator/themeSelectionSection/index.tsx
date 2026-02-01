@@ -1,6 +1,6 @@
 import type { JSX } from "react";
-import ThemeColorSelectionRow from "@/components/themeCreator/themeSelectionSection/themeColorSelectionRow";
-import { ColorSelectionSection } from "./styles";
+import { ThemeColorSelectionSectionContainer } from "./styles";
+import ThemeColorSelectionRow from "@/components/themeCreator/themeColorSelectionRow";
 import { AppThemeColors } from "@/styles/themes/AppTheme";
 
 type Props = {
@@ -17,7 +17,7 @@ export default function ThemeColorSelectionSection({ newThemeColors, onUpdate }:
     }
     
     return (
-        <ColorSelectionSection>
+        <ThemeColorSelectionSectionContainer>
             <ThemeColorSelectionRow
                 label="Primary"
                 color={["primary", newThemeColors.primary]}
@@ -59,6 +59,6 @@ export default function ThemeColorSelectionSection({ newThemeColors, onUpdate }:
                 color={["backgroundBottom", newThemeColors.backgroundBottom]}
                 onUpdate={updateColor}                
             />
-        </ColorSelectionSection>
+        </ThemeColorSelectionSectionContainer>
     );
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CreatorDiv = styled.section`
+export const ThemeCreatorContainer = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;

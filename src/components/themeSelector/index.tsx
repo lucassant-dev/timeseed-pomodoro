@@ -1,15 +1,15 @@
 import { useState, type JSX } from "react";
+import { ThemeSelectorContainer, ThemeSelectorTitle, ThemeList, ThemeListItem, ActionButtonsContainer } from "./styles";
+import ThemeSelectionItem from "@/components/themeSelector/themeSelectionItem";
 import AddThemeButton from "@/components/themeSelector/addThemeButton";
-import ThemeSelectionButton from "@/components/themeSelector/themeSelectionButton";
-import { ActionButtonsDiv, SelectionList, SelectionListItem, SelectorTitle, ThemeSelectorDiv } from "./styles";
-import AppTheme from "@/styles/themes/AppTheme";
+import ThemeSelectorActionButton from "@/components/themeSelector/themeSelectorActionButton";
+import type AppTheme from "@/styles/themes/AppTheme";
 import systemThemes from "@/styles/themes";
-import { PlusIcon } from "lucide-react";
-import ThemeActionButton from "./themeActionButton";
 import globalColors from "@/styles/themes/globalColors";
 import useAppTheme from "@/hooks/useAppTheme";
 import CustomUserThemeStorage from "@/storage/CustomUserThemeStorage";
 import SelectedUserThemeStorage from "@/storage/SelectedUserThemeStorage";
+import { PlusIcon } from "lucide-react";
 
 export default function ThemeSelector(): JSX.Element {
     const { currentTheme, changeTheme } = useAppTheme();
@@ -26,38 +26,40 @@ export default function ThemeSelector(): JSX.Element {
     }
 
     return (
-        <ThemeSelectorDiv>
-            <SelectorTitle aria-label="Theme Selection">Theme Selection</SelectorTitle>
+        <ThemeSelectorContainer>
+            <ThemeSelectorTitle aria-label="Theme Selection">
+                Theme Selection
+            </ThemeSelectorTitle>
             
-            <SelectionList>
+            <ThemeList>
                 {appThemes.map((theme) => {
                     return (
-                        <SelectionListItem key={theme.name}>
-                            <ThemeSelectionButton
+                        <ThemeListItem key={theme.name}>
+                            <ThemeSelectionItem
                                 theme={theme}
                                 isSelected={theme.name === selectedTheme?.name}
                                 onSelect={() => setSelectedTheme(theme)}
                             />
-                        </SelectionListItem>
+                        </ThemeListItem>
                     );
                 })}
-                <SelectionListItem>
+                <ThemeListItem>
                     <AddThemeButton icon={PlusIcon} actionLabel="Add new theme" />
-                </SelectionListItem>
-            </SelectionList>
+                </ThemeListItem>
+            </ThemeList>
 
-            <ActionButtonsDiv>
-                <ThemeActionButton
+            <ActionButtonsContainer>
+                <ThemeSelectorActionButton
                     label="Select"
                     color={globalColors.status.success}
                     onClick={handleSelectClick}
                 />
-                <ThemeActionButton
+                <ThemeSelectorActionButton
                     label="Remove"
                     color={globalColors.status.danger}
                     onClick={() => {}}
                 />
-            </ActionButtonsDiv>
-        </ThemeSelectorDiv>
+            </ActionButtonsContainer>
+        </ThemeSelectorContainer>
     );
 }

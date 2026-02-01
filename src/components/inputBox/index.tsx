@@ -1,16 +1,16 @@
 import type { JSX } from "react";
-import { Input, InputDiv, InputLabel, InputWrapper } from "./styles";
+import { InputContainer, InputLabel, InputWrapper, Input } from "./styles";
 
-type InputBoxProps = {
+type Props = {
     value: string | undefined,
     onChange: (value: string) => void,
     label?: string,
     placeholder?: string
 };
 
-export default function InputBox(props: InputBoxProps): JSX.Element {
+export default function InputBox(props: Props): JSX.Element {
     return (
-        <InputDiv>
+        <InputContainer>
             {props.label && <InputLabel>{props.label}</InputLabel>}
             <InputWrapper>
                 <Input
@@ -20,6 +20,6 @@ export default function InputBox(props: InputBoxProps): JSX.Element {
                     onChange={(e) => props.onChange(e.target.value)}
                 / >
             </InputWrapper>
-        </InputDiv>
+        </InputContainer>
     );
 }

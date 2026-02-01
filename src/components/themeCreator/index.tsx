@@ -1,10 +1,10 @@
 import { useState, type JSX } from "react";
-import { CreatorDiv } from "./styles";
-import ConfirmThemeButton from "@/components/themeCreator/ConfirmThemeButton";
+import { ThemeCreatorContainer } from "./styles";
+import CreateThemeButton from "@/components/themeCreator/CreateThemeButton";
 import ThemeColorSelectionSection from "@/components/themeCreator/themeSelectionSection";
 import InputBox from "@/components/inputBox";
-import AppTheme, { AppThemeColors } from "@/styles/themes/AppTheme";
 import useAppTheme from "@/hooks/useAppTheme";
+import AppTheme, { AppThemeColors } from "@/styles/themes/AppTheme";
 import CustomUserThemeStorage from "@/storage/CustomUserThemeStorage";
 import ErrorHandler from "@/utils/errorHandler";
 
@@ -39,7 +39,7 @@ export default function ThemeCreator(): JSX.Element {
     }
 
     return (
-        <CreatorDiv>
+        <ThemeCreatorContainer>
             <InputBox
                 label="Theme Name"
                 value={themeName}
@@ -51,7 +51,7 @@ export default function ThemeCreator(): JSX.Element {
                 onUpdate={setThemeColors}
             />
 
-            <ConfirmThemeButton onClick={handleClick} />      
-        </CreatorDiv>
+            <CreateThemeButton onClick={handleClick} />      
+        </ThemeCreatorContainer>
     );
 }

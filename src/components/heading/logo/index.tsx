@@ -1,14 +1,14 @@
 import type { JSX } from "react";
 import { Sprout } from "lucide-react";
-import { Link, LogoDiv, SvgDiv, Title } from "./styles";
+import { LogoContainer, LogoLink, LogoIconWrapper, LogoTitle } from "./styles";
 
 export default function Logo(): JSX.Element {
     return (
-        <LogoDiv>
-            <Link href="#">
-                <SvgDiv><Sprout /></SvgDiv>
-                <Title>Timeseed</Title>
-            </Link>
-        </LogoDiv>
+        <LogoContainer>
+            <LogoLink href="#">
+                <LogoIconWrapper><Sprout /></LogoIconWrapper>
+                <LogoTitle>Timeseed</LogoTitle>
+            </LogoLink>
+        </LogoContainer>
     );
 }

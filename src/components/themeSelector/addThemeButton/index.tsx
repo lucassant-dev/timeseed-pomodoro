@@ -1,5 +1,5 @@
 import type { ComponentType, JSX, SVGProps } from "react";
-import { AddButton } from "./styles";
+import { AddThemeButtonLink } from "./styles";
 
 type Props = {
     icon: ComponentType<SVGProps<SVGSVGElement>>,
@@ -8,8 +8,8 @@ type Props = {
 
 export default function AddThemeButton({ icon: Icon, actionLabel}: Props): JSX.Element {
     return (
-        <AddButton title={actionLabel} aria-label={actionLabel}>
+        <AddThemeButtonLink title={actionLabel} aria-label={actionLabel}>
             <Icon />
-        </AddButton>
+        </AddThemeButtonLink>
     );
 }

@@ -1,13 +1,13 @@
 import type { JSX } from "react";
-import { HeadingDiv } from "./styles";
+import { HeadingContainer } from "./styles";
 import Logo from "@/components/heading/logo";
-import NavigationMenu from "@/components/heading/navigationMenu";
+import NavigationMenu from "@/components/heading/menu";
 
 export default function Heading(): JSX.Element {
     return (
-        <HeadingDiv>
+        <HeadingContainer>
             <Logo />
             <NavigationMenu />
-        </HeadingDiv>
+        </HeadingContainer>
     );
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LogoDiv = styled.div`
+export const LogoContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +11,7 @@ export const LogoDiv = styled.div`
     }
 `;
 
-export const Link = styled.a`
+export const LogoLink = styled.a`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,12 +30,12 @@ export const Link = styled.a`
 `;
  
 
-export const Title = styled.span`
+export const LogoTitle = styled.span`
     font-weight: bold;
     font-size: 3.6rem;
 `;
 
-export const SvgDiv = styled.div`
+export const LogoIconWrapper = styled.div`
     width: 6.4rem;
     height: 6.4rem;
     display: flex;

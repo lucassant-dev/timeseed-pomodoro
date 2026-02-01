@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import globalColors from "@/styles/themes/globalColors";
 
-export const AddButton = styled.button`
+export const AddThemeButtonLink = styled.button`
     background-color: ${globalColors.status.info};
     width: 100%;
     display: flex;

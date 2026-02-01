@@ -1,7 +1,7 @@
 import globalColors from "@/styles/themes/globalColors";
 import styled from "styled-components";
 
-export const InputDiv = styled.div`
+export const InputContainer = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ThemeSelectorDiv = styled.div`
+export const ThemeSelectorContainer = styled.div`
     margin: auto;
     position: relative;
     display: flex;
@@ -18,14 +18,14 @@ export const ThemeSelectorDiv = styled.div`
     }
 `;
 
-export const SelectorTitle = styled.h1`
+export const ThemeSelectorTitle = styled.h1`
     text-align: center;
     font-size: 3rem;
     color: ${({ theme }) => theme.primary};
     cursor: default;
 `;
 
-export const SelectionList = styled.ul`
+export const ThemeList = styled.ul`
     width: 100%;
     overflow-y: auto;
     display: flex;
@@ -42,11 +42,11 @@ export const SelectionList = styled.ul`
     scrollbar-width: auto;
 `;
 
-export const SelectionListItem = styled.li`
+export const ThemeListItem = styled.li`
     width: 100%;
 `;
 
-export const ActionButtonsDiv = styled.div`
+export const ActionButtonsContainer = styled.div`
     margin-top: 2rem;
     height: 6rem;
     display: flex;
