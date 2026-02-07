@@ -1,25 +1,16 @@
-import type { JSX } from "react";
-import { InputContainer, InputLabel, InputWrapper, Input } from "./styles";
+import type { JSX, ReactNode } from "react";
+import { InputContainer, InputLabel } from "./styles";
 
 type Props = {
-    value: string | undefined,
-    onChange: (value: string) => void,
-    label?: string,
-    placeholder?: string
+    children: ReactNode,
+    title: string
 };
 
-export default function InputBox(props: Props): JSX.Element {
+export default function InputBox({ children, title }: Props): JSX.Element {
     return (
         <InputContainer>
-            {props.label && <InputLabel>{props.label}</InputLabel>}
-            <InputWrapper>
-                <Input
-                    type="text"
-                    placeholder={props.placeholder}
-                    value={props.value}
-                    onChange={(e) => props.onChange(e.target.value)}
-                / >
-            </InputWrapper>
+            <InputLabel>{title}</InputLabel>
+            {children}
         </InputContainer>
     );
 }
