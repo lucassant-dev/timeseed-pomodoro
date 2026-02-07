@@ -1,15 +1,9 @@
-import { createContext, JSX, ReactNode, useState } from "react";
-import type AppTheme from "@/styles/themes/AppTheme";
-import { ThemeProvider } from "styled-components";
-import systemThemes from "@/styles/themes";
 import SelectedUserThemeStorage from "@/storage/SelectedUserThemeStorage";
-
-export type AppThemeContextType = {
-    currentTheme: AppTheme,
-    changeTheme: (theme: AppTheme) => void
-};
-
-export const AppThemeContext = createContext<AppThemeContextType>({} as AppThemeContextType);
+import type AppTheme from "@/styles/themes/AppTheme";
+import { JSX, ReactNode, useState } from "react";
+import AppThemeContext from "@/contexts/appThemeContext";
+import systemThemes from "@/styles/themes";
+import { ThemeProvider } from "styled-components";
 
 type AppThemeProviderProps = {
     children: ReactNode

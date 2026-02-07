@@ -6,7 +6,7 @@ import ThemeSelectorActionButton from "@/components/themeSelector/themeSelectorA
 import type AppTheme from "@/styles/themes/AppTheme";
 import systemThemes from "@/styles/themes";
 import globalColors from "@/styles/themes/globalColors";
-import useAppTheme from "@/hooks/useAppTheme";
+import useAppTheme from "@/contexts/appThemeContext/hook";
 import CustomUserThemeStorage from "@/storage/CustomUserThemeStorage";
 import SelectedUserThemeStorage from "@/storage/SelectedUserThemeStorage";
 import { PlusIcon } from "lucide-react";
