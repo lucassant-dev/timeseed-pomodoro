@@ -1,4 +1,4 @@
-import { AppThemeProvider } from "@/contexts/appThemeContext";
+import AppThemeProvider from "@/contexts/appThemeContext/provider";
 import GlobalStyle from "@/styles/global";
 import Home from "@/pages/Home";
 

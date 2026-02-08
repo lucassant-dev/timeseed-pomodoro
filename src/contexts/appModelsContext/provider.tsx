@@ -13,7 +13,7 @@ const initialFlipValues: Flip = {
         start: new Date(),
         complete: new Date()
     },
-    side: FlipSide.Sun,
+    side: FlipSide.Focus,
     state: FlipState.Inactive,
     durationInSeconds: 0
 };

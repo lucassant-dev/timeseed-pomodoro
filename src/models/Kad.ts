@@ -7,7 +7,7 @@ export type KadMetaData = {
 
 export type KadFlips= {
     all: Flip[],
-    current: Flip,
+    current: Flip | null,
     index: number
 };
 

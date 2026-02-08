@@ -5,11 +5,11 @@ import AppThemeContext from "@/contexts/appThemeContext";
 import systemThemes from "@/styles/themes";
 import { ThemeProvider } from "styled-components";
 
-type AppThemeProviderProps = {
+type Props = {
     children: ReactNode
 };
 
-export function AppThemeProvider({ children }: AppThemeProviderProps): JSX.Element {
+export default function AppThemeProvider({ children }: Props): JSX.Element {
     const selectedUserTheme: AppTheme = SelectedUserThemeStorage.getTheme() ?? systemThemes.light;
     
     const [theme, setTheme] = useState<AppTheme>(selectedUserTheme);
@@ -21,7 +21,7 @@ export function AppThemeProvider({ children }: AppThemeProviderProps): JSX.Eleme
     return (
         <AppThemeContext.Provider value={{
             currentTheme: theme,
-            changeTheme,
+            changeTheme
         }}>
             <ThemeProvider theme={theme.colors}>
                 {children}
