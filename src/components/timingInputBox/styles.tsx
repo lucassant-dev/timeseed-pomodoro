@@ -9,7 +9,7 @@ export const TimingInputBoxContainer = styled.div`
 `;
 
 export const TimingInputSeparator = styled.span`
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.text.default};
     font-size: 4.8rem;
     font-weight: bold;
     margin-top: 1.4rem;

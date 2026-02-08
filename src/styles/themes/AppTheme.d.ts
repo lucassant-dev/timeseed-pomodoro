@@ -1,12 +1,25 @@
+export type AppThemeTextColors = {
+    default: string,
+    contrast: string
+};
+
+export type AppThemeMenuColors = {
+    default: string,
+    contrast: string
+};
+
+export type AppThemePageBackgroundGradient = {
+    top: string,
+    bottom: string
+};
+
 export type AppThemeColors = {
     primary: string,
-    text: string,
+    text: AppThemeTextColors,
     icon: string,
-    menu: string,
-    contrast: string,
-    backgroundTop: string,
-    backgroundBottom: string
-}
+    menu: AppThemeMenuColors,
+    background: AppThemePageBackgroundGradient
+};
 
 type AppTheme = {
     name: string,

@@ -6,7 +6,7 @@ export const SelectedKadContainer = styled.div`
     justify-content: center;
     flex-direction: column;
     border-radius: 10rem;
-    background-color: ${({ theme }) => theme.menu};
+    background-color: ${({ theme }) => theme.menu.default};
     padding: 1rem 3rem;
     gap: 1rem;
 `;
@@ -34,7 +34,7 @@ export const KadIconWrapper = styled.li`
         position: absolute;
         content: "";
         inset: 0;
-        background-color: ${({ theme }) => theme.contrast};
+        background-color: ${({ theme }) => theme.menu.contrast};
         pointer-events: none;
         opacity: 0;
         transition: opacity 0.2s ease-in;

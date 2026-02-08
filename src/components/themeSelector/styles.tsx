@@ -36,22 +36,12 @@ export const ThemeList = styled.ul`
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 2rem;
     padding: 0 1.6rem;
-    scrollbar-color: ${({ theme }) => `${theme.primary} ${theme.menu}`};
+    scrollbar-color: ${({ theme }) => `${theme.primary} ${theme.menu.default}`};
     scrollbar-width: auto;
 `;
 
 export const ThemeListItem = styled.li`
     width: 100%;
-`;
-
-export const ActionButtonsContainer = styled.div`
-    margin-top: 2rem;
-    height: 6rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 1rem;
 `;

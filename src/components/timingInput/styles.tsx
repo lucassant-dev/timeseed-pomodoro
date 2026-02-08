@@ -24,9 +24,9 @@ export const TimingNumberInput = styled.input`
     
     ${({ theme }) => {
         return css`
-            color: ${theme.text};
+            color: ${theme.text.default};
             &::placeholder {
-                color: ${theme.text};
+                color: ${theme.text.default};
                 font-size: 3.8rem;
                 font-weight: bold;
             }

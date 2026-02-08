@@ -29,11 +29,11 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.6rem;
         background: ${({ theme }) => {
             return `linear-gradient(
-                ${theme.backgroundBottom} 0%,
-                ${theme.backgroundTop} 100%
+                ${theme.background.bottom} 0%,
+                ${theme.background.top} 100%
             )`
         }};
-        color: ${({ theme }) => theme.text};
+        color: ${({ theme }) => theme.text.default};
     }
 
     button {

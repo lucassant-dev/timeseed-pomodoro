@@ -30,7 +30,7 @@ export const Input = styled.input`
     width: 100%;
     height: 100%;
     padding: 0 1rem 0 1rem;
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.text.default};
     background-color: transparent;
     text-align: center;
     font-size: 2rem;
@@ -39,7 +39,7 @@ export const Input = styled.input`
     transition: all 0.22s ease-in-out;
     
     &::placeholder {
-        color: ${({ theme }) => theme.text};
+        color: ${({ theme }) => theme.text.default};
         font-size: 1.6rem;
         font-style: italic;
     }

@@ -1,17 +1,29 @@
 import type AppTheme from "@/styles/themes/AppTheme";
 
+const DEFAULT_BLACK = "#181f2e";
 const DEFAULT_WHITE = "#e6e9f0";
 
 const darkTheme: AppTheme = {
 	name: "Dark",
 	colors: {
 		primary: "#0da170",
-		text: DEFAULT_WHITE,
+		
+		text: {
+			default: DEFAULT_WHITE,
+			contrast: DEFAULT_BLACK
+		},
+
 		icon: "#ffff",
-		menu: "#181f2e",
-		contrast: DEFAULT_WHITE,
-		backgroundBottom: `rgba(10, 15, 26, 1)`,
-		backgroundTop: `rgb(42, 43, 55)`
+
+		menu: {
+			default: DEFAULT_BLACK,
+			contrast: DEFAULT_WHITE
+		},
+
+		background: {
+			top: `rgb(42, 43, 55)`,
+			bottom: `rgba(10, 15, 26, 1)`
+		}
 	}
 };
 

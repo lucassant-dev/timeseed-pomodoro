@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const MenuRowContainer = styled.div`
     position: relative;
     padding: 2.4rem 4rem;
-    height: 12rem;
     width: 50rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     transition: all 0.4s ease-in;
 
     &:hover {
@@ -19,7 +19,7 @@ export const MenuRowContainer = styled.div`
         content: "";
         inset: 0;
         pointer-events: none;
-        background-color: ${({ theme }) => theme.contrast};
+        background-color: ${({ theme }) => theme.menu.contrast};
         opacity: 0;
         transition: opacity 0.6s ease-in;
     }

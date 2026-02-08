@@ -11,5 +11,5 @@ export const InputContainer = styled.div`
 export const InputLabel = styled.label`
     font-weight: bold;
     font-size: 3rem;
-    color: ${({ theme }) => theme.text}
+    color: ${({ theme }) => theme.text.default}
 `;
