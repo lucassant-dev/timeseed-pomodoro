@@ -6,6 +6,8 @@ type Props = {
 };
 
 export const AppButtonLink = styled.button<Props>`
+    user-select: auto;
+    cursor: pointer;
     border-radius: 1rem;
     font-weight: bold;
     font-size: 2rem;

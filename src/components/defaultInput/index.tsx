@@ -5,10 +5,11 @@ type Props = {
     name: string,
     value: string | undefined,
     onChange: (event: ChangeEvent<HTMLInputElement>) => void,
-    label: string
+    label: string,
+    fontColor: string
 };
 
-export default function DefaultInput({ name, label, onChange, value }: Props): JSX.Element {
+export default function DefaultInput({ name, label, onChange, value, fontColor }: Props): JSX.Element {
     return (
         <InputWrapper>
             <Input
@@ -17,6 +18,7 @@ export default function DefaultInput({ name, label, onChange, value }: Props): J
                 placeholder={label}
                 value={value}
                 onChange={onChange}
+                $fontColor={fontColor}
             / >
         </InputWrapper>
     );
