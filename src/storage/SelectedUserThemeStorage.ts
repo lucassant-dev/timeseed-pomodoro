@@ -1,6 +1,6 @@
 import type AppTheme from "@/styles/themes/AppTheme";
 import StorageError from "@/errors/StorageError";
-import ErrorHandler from "@/utils/errorHandler";
+import ErrorHandler from "@/utils/ErrorHandler";
 
 export default class SelectedUserThemeStorage {
     private static readonly SELECTED_THEME_KEY = "selectedUserTheme";
