@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function AppThemeProvider({ children }: Props): JSX.Element {
-    const selectedUserTheme: AppTheme = SelectedUserThemeStorage.getTheme() ?? systemThemes.light;
+    const selectedUserTheme: AppTheme = SelectedUserThemeStorage.getTheme() ?? systemThemes.dark;
     
     const [theme, setTheme] = useState<AppTheme>(selectedUserTheme);
 
