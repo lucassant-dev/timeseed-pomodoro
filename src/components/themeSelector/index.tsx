@@ -1,29 +1,19 @@
-import { useState, type JSX } from "react";
-import { ThemeSelectorContainer, ThemeSelectorTitle, ThemeList, ThemeListItem, ActionButtonsContainer } from "./styles";
+import { useEffect, useState, type JSX } from "react";
+import { ThemeSelectorContainer, ThemeSelectorTitle, ThemeList, ThemeListItem } from "./styles";
 import ThemeSelectionItem from "@/components/themeSelector/themeSelectionItem";
-import AddThemeButton from "@/components/themeSelector/addThemeButton";
-import ThemeSelectorActionButton from "@/components/themeSelector/themeSelectorActionButton";
 import type AppTheme from "@/styles/themes/AppTheme";
 import systemThemes from "@/styles/themes";
-import globalColors from "@/styles/themes/globalColors";
-import useAppTheme from "@/contexts/appThemeContext/hook";
-import CustomUserThemeStorage from "@/storage/CustomUserThemeStorage";
+import useAppThemeContext from "@/contexts/appThemeContext/hook";
 import SelectedUserThemeStorage from "@/storage/SelectedUserThemeStorage";
-import { PlusIcon } from "lucide-react";
 
 export default function ThemeSelector(): JSX.Element {
-    const { currentTheme, changeTheme } = useAppTheme();
+    const { currentTheme, changeTheme } = useAppThemeContext();
     const [selectedTheme, setSelectedTheme] = useState<AppTheme>(currentTheme);
-
-    const defaultAppThemes: AppTheme[] = Object.values(systemThemes);
-    const userCustomThemes: AppTheme[] = Object.values(CustomUserThemeStorage.getAllThemes());
-
-    const appThemes: AppTheme[] = defaultAppThemes.concat(userCustomThemes);
-
-    function handleSelectClick(): void {
+    
+    useEffect(() => {
         changeTheme(selectedTheme);
         SelectedUserThemeStorage.setTheme(selectedTheme);
-    }
+    }, [selectedTheme]);
 
     return (
         <ThemeSelectorContainer>
@@ -32,7 +22,7 @@ export default function ThemeSelector(): JSX.Element {
             </ThemeSelectorTitle>
             
             <ThemeList>
-                {appThemes.map((theme) => {
+                {Object.values(systemThemes).map((theme) => {
                     return (
                         <ThemeListItem key={theme.name}>
                             <ThemeSelectionItem
@@ -43,23 +33,8 @@ export default function ThemeSelector(): JSX.Element {
                         </ThemeListItem>
                     );
                 })}
-                <ThemeListItem>
-                    <AddThemeButton icon={PlusIcon} actionLabel="Add new theme" />
-                </ThemeListItem>
             </ThemeList>
 
-            <ActionButtonsContainer>
-                <ThemeSelectorActionButton
-                    label="Select"
-                    color={globalColors.status.success}
-                    onClick={handleSelectClick}
-                />
-                <ThemeSelectorActionButton
-                    label="Remove"
-                    color={globalColors.status.danger}
-                    onClick={() => {}}
-                />
-            </ActionButtonsContainer>
         </ThemeSelectorContainer>
     );
 }
