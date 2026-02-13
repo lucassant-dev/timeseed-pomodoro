@@ -3,12 +3,13 @@ import { TimingInputContainer, TimingInputTitle, TimingNumberInput } from "./sty
 
 type Props = {
     title: string,
-    timingValue: string,
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-    onBlur: (event: FocusEvent<HTMLInputElement>) => void
+    timingValue?: number,
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void,
+    onBlur: (event: FocusEvent<HTMLInputElement>) => void,
+    fontColor: string
 };
 
-export default function TimingInput({ title, timingValue, onChange, onBlur }: Props): JSX.Element {
+export default function TimingInput({ title, timingValue, onChange, onBlur, fontColor }: Props): JSX.Element {
     return (
         <TimingInputContainer>
             <TimingInputTitle>
@@ -21,6 +22,7 @@ export default function TimingInput({ title, timingValue, onChange, onBlur }: Pr
                 placeholder="00"
                 onChange={onChange}
                 onBlur={onBlur}
+                $fontColor={fontColor}
             />
         </TimingInputContainer>
     );

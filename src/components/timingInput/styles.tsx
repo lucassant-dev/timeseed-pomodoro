@@ -13,7 +13,11 @@ export const TimingInputTitle = styled.label`
     font-size: 1.6rem;
 `;
 
-export const TimingNumberInput = styled.input`
+type Props = {
+    $fontColor: string
+};
+
+export const TimingNumberInput = styled.input<Props>`
     width: 6rem;
     height: 6rem;
     border: none;
@@ -22,19 +26,22 @@ export const TimingNumberInput = styled.input`
     font-size: 3.8rem;
     font-weight: bold;
     
-    ${({ theme }) => {
+    ${({ $fontColor }) => {
         return css`
-            color: ${theme.text.default};
+            color: ${$fontColor};
             &::placeholder {
-                color: ${theme.text.default};
+                color: ${$fontColor};
                 font-size: 3.8rem;
                 font-weight: bold;
             }
         `;
     }}
 
-    &:focus {
-        caret-color: transparent;
+    &:hover {
         border-bottom: 0.4rem solid ${({ theme }) => theme.primary}
+    }
+
+    &:focus::placeholder {
+        opacity: 0;
     }
 `;

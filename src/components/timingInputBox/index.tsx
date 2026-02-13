@@ -3,17 +3,18 @@ import { TimingInputBoxContainer, TimingInputSeparator } from "./styles";
 import TimingInput from "@/components/timingInput";
 
 type TimingInputValues = {
-    hours: string,
-    minutes: string,
-    seconds: string
+    hours?: number,
+    minutes?: number,
+    seconds?: number
 };
 
 type Props = {
     timingValues: TimingInputValues,
-    onUpdate: Dispatch<SetStateAction<TimingInputValues>>
+    onUpdate: Dispatch<SetStateAction<TimingInputValues>>,
+    fontColor: string
 };
 
-export default function TimeInputBox({ timingValues, onUpdate }: Props): JSX.Element {    
+export default function TimeInputBox({ timingValues, onUpdate, fontColor }: Props): JSX.Element {    
     function updateTimingValue(field: keyof TimingInputValues, value: string): void {
         const onlyDigits: string = value.replace(/\D/g, "");
         
@@ -38,8 +39,9 @@ export default function TimeInputBox({ timingValues, onUpdate }: Props): JSX.Ele
                 onBlur={(event: FocusEvent<HTMLInputElement>) => 
                     applyZeros("hours", event.target.value)
                 }
+                fontColor={fontColor}
             />
-            <TimingInputSeparator>:</TimingInputSeparator>
+            <TimingInputSeparator $fontColor={fontColor}>:</TimingInputSeparator>
             <TimingInput
                 title="Minutes"
                 timingValue={timingValues.minutes}
@@ -49,8 +51,9 @@ export default function TimeInputBox({ timingValues, onUpdate }: Props): JSX.Ele
                 onBlur={(event: FocusEvent<HTMLInputElement>) => 
                     applyZeros("minutes", event.target.value)
                 }
+                fontColor={fontColor}
             />
-            <TimingInputSeparator>:</TimingInputSeparator>
+            <TimingInputSeparator $fontColor={fontColor}>:</TimingInputSeparator>
             <TimingInput
                 title="Seconds"
                 timingValue={timingValues.seconds}
@@ -59,6 +62,7 @@ export default function TimeInputBox({ timingValues, onUpdate }: Props): JSX.Ele
                 onBlur={(event: FocusEvent<HTMLInputElement>) => 
                     applyZeros("seconds", event.target.value)
                 }
+                fontColor={fontColor}
             />
         </TimingInputBoxContainer>
     );

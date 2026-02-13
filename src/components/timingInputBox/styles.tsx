@@ -8,8 +8,12 @@ export const TimingInputBoxContainer = styled.div`
     padding: 1rem;
 `;
 
-export const TimingInputSeparator = styled.span`
-    color: ${({ theme }) => theme.text.default};
+type Props = {
+    $fontColor: string
+};
+
+export const TimingInputSeparator = styled.span<Props>`
+    color: ${({ $fontColor }) => $fontColor};
     font-size: 4.8rem;
     font-weight: bold;
     margin-top: 1.4rem;
