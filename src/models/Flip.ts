@@ -1,5 +1,5 @@
 export enum FlipSide {
-    Focus,
+    Task,
     Break
 }
 
@@ -9,19 +9,14 @@ export enum FlipState {
     Finished
 }
 
-export type FlipContent = {
-    name: string,
-    description: string
-};
-
 export type FlipDateInfo = {
     start: Date,
-    complete: Date | null
+    complete?: Date | null
 };
 
 type Flip = {
     id: string,
-    content: FlipContent,
+    name: string,
     side: FlipSide,
     state: FlipState,
     dateInfo: FlipDateInfo,

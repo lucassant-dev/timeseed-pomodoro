@@ -1,10 +1,5 @@
 import type Flip from "@/models/Flip";
 
-export type KadMetaData = {
-    name: string,
-    description: string
-};
-
 export type KadFlips= {
     all: Flip[],
     current: Flip | null,
@@ -13,8 +8,8 @@ export type KadFlips= {
 
 type Kad = {
     id: string,
-    metaData: KadMetaData,
-    flipData: KadFlips,
+    name: string,
+    flips: KadFlips,
     totalDurationInSeconds: number
 };
 
