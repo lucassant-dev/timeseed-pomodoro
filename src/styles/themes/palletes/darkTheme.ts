@@ -21,8 +21,14 @@ const darkTheme: AppTheme = {
 		},
 
 		background: {
-			top: `rgb(42, 43, 55)`,
-			bottom: `rgba(10, 15, 26, 1)`
+			default: {
+				top: `rgb(42, 43, 55)`,
+				bottom: `rgba(10, 15, 26, 1)`
+			},
+			contrast: {
+				top: "rgba(199, 205, 217, 1)",
+				bottom: "rgb(255, 255, 255)"
+			}
 		}
 	}
 };

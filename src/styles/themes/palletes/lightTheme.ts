@@ -21,8 +21,14 @@ const lightTheme: AppTheme = {
 		},
 
 		background: {
-			top: "rgba(199, 205, 217, 1)",
-			bottom: "rgb(255, 255, 255)"
+			default: {
+				top: "rgba(199, 205, 217, 1)",
+				bottom: "rgb(255, 255, 255)"
+			},
+			contrast: {
+				top: `rgb(42, 43, 55)`,
+				bottom: `rgba(10, 15, 26, 1)`
+			}
 		}
 	}
 };

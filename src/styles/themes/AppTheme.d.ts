@@ -8,9 +8,14 @@ export type AppThemeMenuColors = {
     contrast: string
 };
 
-export type AppThemePageBackgroundGradient = {
+export type AppThemePageBackgroundGradientColors = {
     top: string,
     bottom: string
+};
+
+export type AppThemePageBackgroundGradient = {
+    default: AppThemePageBackgroundGradientColors,
+    contrast: AppThemePageBackgroundGradientColors
 };
 
 export type AppThemeColors = {

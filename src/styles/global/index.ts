@@ -29,8 +29,8 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.6rem;
         background: ${({ theme }) => {
             return `linear-gradient(
-                ${theme.background.bottom} 0%,
-                ${theme.background.top} 100%
+                ${theme.background.default.bottom} 0%,
+                ${theme.background.default.top} 100%
             )`
         }};
         color: ${({ theme }) => theme.text.default};
