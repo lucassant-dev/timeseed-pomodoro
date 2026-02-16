@@ -6,6 +6,7 @@ export interface AppModelStorageManager<TAppModel> {
     save(model: TAppModel): void;
     edit(model: Partial<TAppModel> & { id: string }): void;
     remove(model: TAppModel): void;
+    clearStorage(): void;
 }
 
 
@@ -70,6 +71,10 @@ implements AppModelStorageManager<TAppModel> {
             catch(e: unknown) {
                 console.log(ErrorHandler.handle(e));
             }
+        }
+
+        public clearStorage(): void {
+            localStorage.removeItem(this.STORAGE_KEY);
         }
 
         private setModelsInStorage(models: TAppModel[]): void {

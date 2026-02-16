@@ -6,9 +6,11 @@ type Props = {
     children: ReactNode
 };
 
+const flipStorageManagerSingleton = new FlipStorageManager();
+
 export default function FlipStorageContextProvider({ children }: Props): JSX.Element {
     return (
-        <FlipStorageContext.Provider value={new FlipStorageManager()}>
+        <FlipStorageContext.Provider value={flipStorageManagerSingleton}>
             {children}
         </FlipStorageContext.Provider>
     );

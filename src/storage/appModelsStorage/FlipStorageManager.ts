@@ -5,19 +5,23 @@ import AppModelStorageHelper from "@/storage/appModelsStorage/AppModelStorageHel
 export default class FlipStorageManager implements AppModelStorageManager<Flip> {
     private readonly storageHelper = new AppModelStorageHelper("userFlips");
     
-    public loadAll(): Flip[] {
+    public loadAll = (): Flip[] => {
         return this.storageHelper.loadAll() as Flip[];
     }
 
-    public save(flip: Flip): void {
+    public save = (flip: Flip): void => {
         this.storageHelper.save(flip);
     }
 
-    public edit(flipProperties: Partial<Flip> & { id: string }): void {
+    public edit = (flipProperties: Partial<Flip> & { id: string }): void => {
         this.storageHelper.edit(flipProperties);
     }
 
-    public remove(flip: Flip): void {
+    public remove = (flip: Flip): void => {
         this.storageHelper.remove(flip);
+    }
+
+    public clearStorage = (): void => {
+        this.storageHelper.clearStorage();
     }
 }
