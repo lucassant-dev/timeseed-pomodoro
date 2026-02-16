@@ -1,15 +1,16 @@
-import type { ChangeEvent, FocusEvent, JSX } from "react";
+import type { ChangeEvent, JSX } from "react";
 import { TimingInputContainer, TimingInputTitle, TimingNumberInput } from "./styles";
 
 type Props = {
     title: string,
-    timingValue?: number,
+    timingValue: string,
     onChange: (event: ChangeEvent<HTMLInputElement>) => void,
-    onBlur: (event: FocusEvent<HTMLInputElement>) => void,
+    onFocus: () => void,
+    onBlur: () => void,
     fontColor: string
 };
 
-export default function TimingInput({ title, timingValue, onChange, onBlur, fontColor }: Props): JSX.Element {
+export default function TimingInput({ title, timingValue, onChange, onFocus, onBlur, fontColor }: Props): JSX.Element {
     return (
         <TimingInputContainer>
             <TimingInputTitle>
@@ -21,6 +22,7 @@ export default function TimingInput({ title, timingValue, onChange, onBlur, font
                 inputMode="numeric"
                 placeholder="00"
                 onChange={onChange}
+                onFocus={onFocus}
                 onBlur={onBlur}
                 $fontColor={fontColor}
             />
