@@ -10,17 +10,28 @@ export enum FlipState {
 }
 
 export type FlipDateInfo = {
-    start: Date,
-    complete?: Date | null
+    createdAt: Date,
+    startedAt?: Date,
+    finishedAt?: Date
 };
 
-type Flip = {
+export type BaseFlip = {
     id: string,
     name: string,
-    side: FlipSide,
     state: FlipState,
     dateInfo: FlipDateInfo,
     durationInSeconds: number
 };
+
+export type TaskFlip = BaseFlip & {
+    side: FlipSide.Task,
+    scoreValue: number
+};
+
+export type BreakFlip = BaseFlip & {
+    side: FlipSide.Break
+};
+
+type Flip = TaskFlip | BreakFlip;
 
 export default Flip;

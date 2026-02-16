@@ -5,7 +5,7 @@ const globalColors = {
 		error: "#991b1b",
 		danger: "rgb(238, 77, 77)",
 		info: "#0ea5e9",
-		disabled: "#a1a7ba"
+		disabled: "#919397"
 	},
 
 	black: {

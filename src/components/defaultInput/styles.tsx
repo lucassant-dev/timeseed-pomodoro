@@ -1,5 +1,5 @@
-import globalColors from "@/styles/themes/globalColors";
 import styled from "styled-components";
+import globalColors from "@/styles/themes/globalColors";
 
 export const InputWrapper = styled.div`
     position: relative;

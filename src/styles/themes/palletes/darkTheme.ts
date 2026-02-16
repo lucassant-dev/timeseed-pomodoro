@@ -7,12 +7,12 @@ const darkTheme: AppTheme = {
 	name: "Dark",
 	colors: {
 		primary: "#0da170",
-		
+
 		text: {
 			default: DEFAULT_WHITE,
 			contrast: DEFAULT_BLACK
 		},
-
+		
 		icon: "#ffff",
 
 		menu: {
