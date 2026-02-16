@@ -1,8 +1,9 @@
 import styled, { css } from "styled-components";
+import globalColors from "@/styles/themes/globalColors";
 
 type Props = {
     $height: number,
-    $width: number
+    $width: number,
 };
 
 export const AppButtonLink = styled.button<Props>`
@@ -24,5 +25,9 @@ export const AppButtonLink = styled.button<Props>`
     &:hover {
         filter: brightness(0.94);
         transform: scale(1.01);
+    }
+
+    &:disabled {
+        background-color: ${globalColors.status.disabled}
     }
 `;

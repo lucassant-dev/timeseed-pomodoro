@@ -3,8 +3,8 @@ import { MenuButtonLink, MenuButtonIconWrapper } from "./styles";
 
 type Props = {
     icon: ComponentType<SVGProps<SVGSVGElement>>,
-    onClick?: (e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>) => void,
-    label: string
+    label: string,
+    onClick: (e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>) => void
 };
 
 export default function MenuButton({ icon: Icon, onClick, label }: Props): JSX.Element {

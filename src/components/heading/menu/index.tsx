@@ -9,21 +9,25 @@ export default function Menu(): JSX.Element {
             <MenuButton
                 icon={HomeIcon}
                 label={"Go to home"}
+                onClick={() => {}}
             />
 
             <MenuButton
                 icon={HistoryIcon}
                 label={"Show history"}
+                onClick={() => {}}
             />
 
             <MenuButton
                 icon={SunIcon}
                 label={"Change theme"}
+                onClick={() => {}}
             />
     
             <MenuButton
                 icon={SettingsIcon}
                 label={"Settings"}
+                onClick={() => {}}
             />
         </MenuContainer>
     )
